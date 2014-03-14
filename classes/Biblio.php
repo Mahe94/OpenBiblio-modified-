@@ -41,10 +41,10 @@ class Biblio {
    */
   function validateData() {
     $valid = true;
-    if ($this->_callNmbr1 == "") {
-      $valid = false;
-      $this->_callNmbrError = $this->_loc->getText("biblioError1");
-    }
+//    if ($this->_callNmbr1 == "") {	To remove the * call number field
+//      $valid = false;
+//      $this->_callNmbrError = $this->_loc->getText("biblioError1");
+//   }
     foreach ($this->_biblioFields as $key => $value) {
       if (!$this->_biblioFields[$key]->validateData()) {
         $valid = false;
