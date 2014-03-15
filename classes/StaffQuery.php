@@ -145,7 +145,7 @@ class StaffQuery extends Query {
       $this->_error = "Username is already in use.";
       return false;
     }
-    $sql = $this->mkSQL("insert into staff values (null, sysdate(), sysdate(), "
+    $sql = $this->mkSQL("insert into staff values (null, sysdate(), sysdate(), "	//added email stuffs here
                         . "%N, %Q, md5(lower(%Q)), %Q, ",
                         $staff->getLastChangeUserid(), $staff->getUsername(),
                         $staff->getPwd(), $staff->getLastName());
@@ -154,7 +154,8 @@ class StaffQuery extends Query {
     } else {
       $sql .= $this->mkSQL("%Q, ", $staff->getFirstName());
     }
-    $sql .= $this->mkSQL("'N', %Q, %Q, %Q, %Q, %Q) ",
+    $sql .= $this->mkSQL("%Q, 'N', %Q, %Q, %Q, %Q, %Q) ",		//added email stuffs here
+    					 $staff->getEmail(),
                          $staff->hasAdminAuth() ? "Y" : "N",
                          $staff->hasCircAuth() ? "Y" : "N",
                          $staff->hasCircMbrAuth() ? "Y" : "N",

@@ -45,6 +45,14 @@
     </td>
   </tr>
   <tr>
+   <td nowrap="true" class="primary">								<!-- add email --> 
+     <?php echo $loc->getText("adminStaff_edit_formEmail"); ?>
+   </td>
+   <td valign="top" class="primary">
+     <?php printInputText("email",30,30,$postVars,$pageErrors); ?>
+   </td>
+  </tr>
+  <tr>
     <td nowrap="true" class="primary">
       <?php echo $loc->getText("adminStaff_edit_formLogin"); ?>
     </td>

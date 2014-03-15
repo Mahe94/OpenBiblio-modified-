@@ -39,6 +39,8 @@
   $_POST["pwd"] = $staff->getPwd();
   $staff->setPwd2($_POST["pwd2"]);
   $_POST["pwd2"] = $staff->getPwd2();
+  $staff->setEmail($_POST["email"]);		//added email
+  $_POST["email"] = $staff->getEmail();
   $staff->setCircAuth(isset($_POST["circ_flg"]));
   $staff->setCircMbrAuth(isset($_POST["circ_mbr_flg"]));
   $staff->setCatalogAuth(isset($_POST["catalog_flg"]));

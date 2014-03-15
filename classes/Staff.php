@@ -24,6 +24,7 @@ class Staff {
   var $_lastNameError = "";
   var $_firstName = "";
   var $_username = "";
+  var $_email = "";
   var $_usernameError = "";
   var $_circAuth = false;
   var $_circMbrAuth = FALSE;
@@ -178,6 +179,23 @@ class Staff {
    */
   function setUsername($username) {
     $this->_username = strtolower(trim($username));
+  }
+  /****************************************************************************
+  * @return string Email ID error text
+  * @access public
+  ****************************************************************************
+  */
+  function getEmail() {
+  	return $this->_email;
+  }
+  /****************************************************************************
+  * @param string $email Email of staff member
+  * @return void
+  * @access public
+  ****************************************************************************
+  */
+  function setEmail($email) {
+  	$this->_email = trim($email);  	
   }
   /****************************************************************************
    * @return boolean true if staff member has circulation authorization
